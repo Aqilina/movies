@@ -1,6 +1,8 @@
 body{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .containerFirst{
@@ -30,6 +32,37 @@ body{
     margin-top: 10px;
 }
 
-.titleName{
 
+
+/*////////////////////////////////////////////////////////////////*/
+/*        SECOND SHEET*/
+
+.containerSecond{
+    display: flex;
+    width: 1200px;
+    background-color: #d0acc3;
+}
+
+.movieInfoSide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 600px;
+    border-right: 1px solid black;
+    background-color: #d0acc3;
+    padding: 10px;
+}
+
+.movieInfoSide img{
+    height: 400px;
+}
+
+.description{
+    padding: 20px;
+}
+
+.commentsSide{
+    width: 50%;
 }
