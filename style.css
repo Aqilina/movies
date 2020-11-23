@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.containerFirst{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1200px;
+    background-color: lightblue;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: white;
+    padding: 0 10px 10px 10px;
+}
+
+.card img{
+    height: 230px;
+    margin-top: 10px;
+}
+
+.titleName{
+
+}
