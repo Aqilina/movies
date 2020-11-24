@@ -5,6 +5,18 @@ body{
     flex-direction: column;
 }
 
+
+.contA{
+    width: 1200px;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
 .containerFirst{
     display: flex;
     flex-wrap: wrap;
@@ -75,11 +87,16 @@ body{
     align-items: center;
 }
 
-.commentBox{
+.commentBox1{
+    display: flex;
     width: 550px;
     margin: 10px 20px;
     background-color: white;
     border-radius: 10px;
+}
+
+.commentBoxSmall{
+    width: 500px;
 }
 
 .namePart{
@@ -131,4 +148,48 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
 }
+
+.closeBtn{
+    height: 20px;
+    margin: 5px;
+}
+
+.backBtn{
+    height: 40px;
+    width: 70px;
+    background-color: darkred;
+    margin: 10px;
+}
+
+.createBtn{
+    height: 40px;
+    width: 100px;
+    background-color: darkred;
+    margin: 10px;
+}
+
+.reviewCont{
+    width: 1150px;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.submit{
+    margin: 15px 0 30px 0;
+}
+
+.reviewInput{
+    margin: 10px 0 5px 0;
+}
+
+.inp1{
+    height: 200px;
+    width: 400px;
+}
+

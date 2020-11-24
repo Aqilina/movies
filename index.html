@@ -12,12 +12,16 @@
 </head>
 <body>
 
-<div class="containerFirst">
-    <div class="card">
-        <img src="https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="">
-        <h5 class="titleName">title</h5>
-        <div>year</div>
-        <div>rating</div>
+
+<div class="contA">
+    <button class="createBtn">CREATE REVIEW</button>
+    <div class="containerFirst">
+        <div class="card">
+            <img src="https://m.media-amazon.com/images/M/MV5BYWZjMjk3ZTItODQ2ZC00NTY5LWE0ZDYtZTI3MjcwN2Q5NTVkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="">
+            <h5 class="titleName">title</h5>
+            <div>year</div>
+            <div>rating</div>
+        </div>
     </div>
 </div>
 
@@ -32,24 +36,40 @@
                 <div>Title</div>
                 <div class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab saepe dolore omnis delectus, asperiores hic autem sunt nobis facilis necessitatibus debitis fugiat ratione minima quasi accusantium molestiae exercitationem vitae! Eveniet.</div>
             </div>
-            <div class="titleComm">COMMENTS</div>
         </div>
 
 
-        <div class="comments">
+<!--        <div class="comments">-->
+<!--            <div class="commentBox1">-->
+<!--                <div class="commentBoxSmall">-->
+<!--                    <div class="namePart">name</div>-->
+<!--                    <div class="commentPart">comment</div>-->
+<!--                </div>-->
+<!--                <button class="closeBtn">X</button>-->
+<!--            </div>-->
 
-            <!--        <div class="commentBox">-->
-            <!--            <div class="namePart">name</div>-->
-            <!--            <div class="commentPart">comment</div>-->
-            <!--        </div>-->
-        </div>
+<!--        </div>-->
     </div>
 
     <div class="inputPart">
         <div id="newCom"></div>
-        <input class="input">
+        <input class="input" placeholder="comment">
         <button class="submit">Submit</button>
     </div>
+</div>
+
+
+<!--//////////////// create new review /////-->
+<div class="reviewCont">
+
+    <div class="reviewInput" id="reviewPicDiv">Insert picture url</div> <input id="reviewPic">
+    <div class="reviewInput" id="reviewTitleDiv">Type movie title</div> <input id="reviewTitle ">
+    <div class="reviewInput" id="reviewYearDiv">Type movie year</div> <input id="reviewYear">
+    <div class="reviewInput" id="reviewRateDiv">Type movie rating</div> <input id="reviewRate">
+    <div class="reviewInput" id="reviewTextDiv">Write review</div> <input class="inp1" id="reviewText">
+
+    <button class="createBtn">ADD</button>
+
 </div>
 
 

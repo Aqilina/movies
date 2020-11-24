@@ -70,7 +70,8 @@ let movies = [
     },
 ]
 
-
+const reviewCont = document.querySelector('.reviewCont')
+const contA = document.querySelector('.contA')
 const containerFirst = document.querySelector('.containerFirst')
 const containerSecond = document.querySelector('.containerSecond')
 const contX = document.querySelector('.contX')
@@ -78,6 +79,10 @@ const input = document.querySelector('.input')
 const submit = document.querySelector('.submit')
 
 const newCom = document.querySelector('#newCom')
+const createBtn = document.querySelector('.createBtn')
+
+const reviewTitle =document.querySelector('#reviewTitle')
+const reviewTitleDiv =document.querySelector('#reviewPic')
 
 let chosenMovie
 // let currentMovie
@@ -86,8 +91,9 @@ let inputValue = ""
 
 
 function createCards(){
-    containerFirst.style.display = 'flex'
-    contX.style.display = 'none'
+    // contA.style.display = 'flex'
+    // contX.style.display = 'none'
+    // reviewCont.style.display = 'none'
 
     containerFirst.innerHTML = ""
 
@@ -98,7 +104,8 @@ function createCards(){
             <img src="${item.image}" alt="">
             <h4 class="titleName">${item.title}</h4>
             <div>${item.year}</div>
-            <div>${item.rating}</div>
+            <div>Rating: ${item.rating}</div>
+            <div>Comments: ${item.comments.length}</div>
         </div>
         `
     })
@@ -124,40 +131,52 @@ function chooseMovie(event){
 
 
 function create2ndPage() {
-    containerFirst.style.display = 'none'
-    contX.style.display = 'flex'
+    // contA.style.display = 'none'
+    // contX.style.display = 'flex'
+    // reviewCont.style.display = 'none'
 
 
-    console.log(chosenMovie)
+    // console.log(chosenMovie)
     containerSecond.innerHTML = ''
 
     containerSecond.innerHTML += `
-        <h2 class="titleComm">COMMENTS</h2>
+        
         <div class="movieInfoCont">
             <div class="movieInfoBox b-right">
+                <button class="backBtn" onclick="backToMovies()">BACK</button>
                 <img class="movieImg" src="${chosenMovie.image}" alt="">
             </div>
 
             <div class="movieInfoBox">
                 <h3>${chosenMovie.title}</h3>
-            <div class="description">${chosenMovie.description}</div>
+                <div class="description">${chosenMovie.description}</div>
+            </div>
         </div>
-        
+        <h3 class="titleComm">COMMENTS</h3>
     `
     createComments()
 }
 
+function backToMovies(){
+//     contA.style.display = 'flex'
+//     contX.style.display = 'none'
+//     reviewCont.style.display = 'none'
+}
 
 function createComments(){
 
     // console.log(chosenMovie.comments[0].name)
 
-    chosenMovie.comments.map(item => {
+    chosenMovie.comments.map((item, index) => {
         let comments = document.createElement('div')
         comments.classList.add('comments')
 
-        let commentBox = document.createElement('div')
-        commentBox.classList.add('commentBox')
+        let commentBox1 = document.createElement('div')
+        commentBox1.classList.add('commentBox1')
+        commentBox1.setAttribute('id', index)
+
+        let commentBoxSmall = document.createElement('div')
+        commentBoxSmall.classList.add('commentBoxSmall')
 
         let namePart = document.createElement('div')
         namePart.classList.add('namePart')
@@ -167,10 +186,21 @@ function createComments(){
         commentPart.classList.add('commentPart')
         commentPart.innerText = item.comment
 
+        let closeBtn = document.createElement('button')
+        closeBtn.classList.add('closeBtn')
+        closeBtn.innerText = 'X'
+        closeBtn.addEventListener('click', deleteCom)
+
         containerSecond.appendChild(comments)
-        comments.appendChild(commentBox)
-        commentBox.appendChild(namePart)
-        commentBox.appendChild(commentPart)
+        comments.appendChild(commentBox1)
+        commentBox1.appendChild(commentBoxSmall)
+        commentBoxSmall.appendChild(namePart)
+        commentBoxSmall.appendChild(commentPart)
+        commentBox1.appendChild(closeBtn)
+        // console.log(chosenMovie.id)
+        // console.log(commentBox1.id)
+        // console.log(closeBtn.id)
+        //
     })
 
 }
@@ -194,7 +224,26 @@ function submitCom(){
     newCom.innerText = ""
     inputValue = ""
     create2ndPage()
+
 }
+
+function deleteCom(event){
+
+    let comId = event.path[1].id
+    // console.log(chosenMovie.comments)
+    // let test = chosenMovie.comments.filter(item => item.id !== comId)
+    delete chosenMovie.comments[comId]
+    create2ndPage()
+
+    // chosenMovie.comments[comId]
+    // console.log(event)
+}
+
+function createReview(){
+
+}
+
 
 input.addEventListener('input', createNewCom)
 submit.addEventListener('click', submitCom)
+createBtn.addEventListener('click', createReview)
