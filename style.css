@@ -32,30 +32,35 @@ body{
     margin-top: 10px;
 }
 
+.titleComm{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
 
 
 /*////////////////////////////////////////////////////////////////*/
 /*        SECOND SHEET*/
 
 .containerSecond{
-    display: flex;
     width: 1200px;
-    background-color: #d0acc3;
+    background-color: lightblue;
 }
 
-.movieInfoSide{
+.movieInfoBox{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
-    height: 600px;
-    border-right: 1px solid black;
-    background-color: #d0acc3;
+    background-color: lightblue;
     padding: 10px;
 }
 
-.movieInfoSide img{
+
+
+.movieImg{
     height: 400px;
 }
 
@@ -63,6 +68,67 @@ body{
     padding: 20px;
 }
 
-.commentsSide{
-    width: 50%;
+.comments{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.commentBox{
+    width: 550px;
+    margin: 10px 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.namePart{
+    margin: 10px;
+    height: 30px;
+    color: darkred;
+    font-weight: 600;
+}
+
+.commentPart{
+    margin: 10px;
+    height: 30px;
+    color: #646060;
+}
+
+.movieInfoCont{
+    display: flex;
+    width: 1200px;
+    background-color: lightblue;
+    height: 500px;
+}
+
+.inputPart{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#newCom{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    margin: 10px 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.inputPart{
+    width: 1200px;
+    background-color: lightblue;
+}
+
+.contX{
+    width: 1200px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

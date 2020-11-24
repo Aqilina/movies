@@ -73,19 +73,29 @@ let movies = [
 
 const containerFirst = document.querySelector('.containerFirst')
 const containerSecond = document.querySelector('.containerSecond')
+const contX = document.querySelector('.contX')
+const input = document.querySelector('.input')
+const submit = document.querySelector('.submit')
 
+const newCom = document.querySelector('#newCom')
 
 let chosenMovie
+// let currentMovie
+let myCom
+let inputValue = ""
 
 
 function createCards(){
+    containerFirst.style.display = 'flex'
+    contX.style.display = 'none'
+
     containerFirst.innerHTML = ""
 
     movies.map(item => {
         containerFirst.innerHTML += `
     
         <div class="card" id="${item.id}" onclick="chooseMovie(event)">
-            <img src="${item.image}">
+            <img src="${item.image}" alt="">
             <h4 class="titleName">${item.title}</h4>
             <div>${item.year}</div>
             <div>${item.rating}</div>
@@ -102,20 +112,89 @@ function chooseMovie(event){
     !!event.target.id ? id = event.target.id : id = event.path[1].id
 
     chosenMovie = movies.filter(item => item.id === id)[0]
+    create2ndPage()
+    // currentMovie = movies.findIndex(item => item.id === id)
+    // currentMovie = movies[currentMovie]
 
     // console.log(chosenMovie)
     // console.log(id)
+
+
+}
+
+
+function create2ndPage() {
+    containerFirst.style.display = 'none'
+    contX.style.display = 'flex'
+
+
+    console.log(chosenMovie)
+    containerSecond.innerHTML = ''
+
+    containerSecond.innerHTML += `
+        <h2 class="titleComm">COMMENTS</h2>
+        <div class="movieInfoCont">
+            <div class="movieInfoBox b-right">
+                <img class="movieImg" src="${chosenMovie.image}" alt="">
+            </div>
+
+            <div class="movieInfoBox">
+                <h3>${chosenMovie.title}</h3>
+            <div class="description">${chosenMovie.description}</div>
+        </div>
+        
+    `
+    createComments()
+}
+
+
+function createComments(){
+
+    // console.log(chosenMovie.comments[0].name)
+
+    chosenMovie.comments.map(item => {
+        let comments = document.createElement('div')
+        comments.classList.add('comments')
+
+        let commentBox = document.createElement('div')
+        commentBox.classList.add('commentBox')
+
+        let namePart = document.createElement('div')
+        namePart.classList.add('namePart')
+        namePart.innerText = item.name
+
+        let commentPart = document.createElement('div')
+        commentPart.classList.add('commentPart')
+        commentPart.innerText = item.comment
+
+        containerSecond.appendChild(comments)
+        comments.appendChild(commentBox)
+        commentBox.appendChild(namePart)
+        commentBox.appendChild(commentPart)
+    })
+
+}
+
+function createNewCom(event){
+
+        inputValue = event.target.value
+        console.log(inputValue)
+        myCom = {
+            name: 'Akve',
+            comment: inputValue
+        }
+}
+
+function submitCom(){
+
+    chosenMovie.comments.push(myCom)
+    // console.log(event)
+    // console.log(chosenMovie)
+    newCom.innerText =  chosenMovie.comments
+    newCom.innerText = ""
+    inputValue = ""
     create2ndPage()
 }
 
-
-function create2ndPage(){
-    containerSecond.innerHTML =''
-
-        containerSecond.innerHTML += `
-             <div class="movieInfoSide">
-                <img src="${chosenMovie.image}">
-                <div class="description">${chosenMovie.description}<div>
-            </div>
-        `
-}
+input.addEventListener('input', createNewCom)
+submit.addEventListener('click', submitCom)
