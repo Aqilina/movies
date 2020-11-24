@@ -91,9 +91,9 @@ let inputValue = ""
 
 
 function createCards(){
-    // contA.style.display = 'flex'
-    // contX.style.display = 'none'
-    // reviewCont.style.display = 'none'
+    contA.style.display = 'flex'
+    contX.style.display = 'none'
+    reviewCont.style.display = 'none'
 
     containerFirst.innerHTML = ""
 
@@ -131,9 +131,9 @@ function chooseMovie(event){
 
 
 function create2ndPage() {
-    // contA.style.display = 'none'
-    // contX.style.display = 'flex'
-    // reviewCont.style.display = 'none'
+    contA.style.display = 'none'
+    contX.style.display = 'flex'
+    reviewCont.style.display = 'none'
 
 
     // console.log(chosenMovie)
@@ -158,9 +158,9 @@ function create2ndPage() {
 }
 
 function backToMovies(){
-//     contA.style.display = 'flex'
-//     contX.style.display = 'none'
-//     reviewCont.style.display = 'none'
+    contA.style.display = 'flex'
+    contX.style.display = 'none'
+    reviewCont.style.display = 'none'
 }
 
 function createComments(){
@@ -240,6 +240,9 @@ function deleteCom(event){
 }
 
 function createReview(){
+    contA.style.display = 'none'
+    contX.style.display = 'none'
+    reviewCont.style.display = 'flex'
 
 }
 
