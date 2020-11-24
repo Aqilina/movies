@@ -144,7 +144,7 @@ body{
 .contX{
     width: 1200px;
     background-color: lightblue;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -173,7 +173,7 @@ body{
 .reviewCont{
     width: 1150px;
     background-color: lightblue;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
